@@ -1,0 +1,191 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'OzCaramel';
+            src: url('OzCaramel Regular.ttf') format('truetype');
+        }
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .cny-container {
+            background: #ffffff;
+            border: 3px solid #e31837;
+            border-radius: 1rem;
+            padding: 1.5rem 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+        .cny-text {
+            font-family: 'OzCaramel', sans-serif;
+            background: linear-gradient(45deg, #e31837, #ffd700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        .cny-button {
+            background-color: #e31837;
+            color: #fff;
+            border: 2px solid #ffd700;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+     
+            transition: all 0.3s ease;
+        }
+        .cny-button:hover {
+            background-color: #ffd700;
+            color: #e31837;
+            transform: translateY(-2px);
+        }
+        .decoration {
+            position: fixed;
+            z-index: 998;
+            width: 100px;
+            height: 100px;
+        }
+        .camera-wrapper {
+            border: 60px solid white;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .border-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .rotating-text {
+            position: fixed;
+            z-index: 999;
+            .rotating-greeting {
+                opacity: 0;
+                animation: fadeInOut 3.5s ease-in-out infinite;
+            }
+            @keyframes fadeInOut {
+                0%, 100% { opacity: 0; transform: translateY(10px); }
+                20%, 80% { opacity: 1; transform: translateY(0); }
+            }
+        }
+        .card {
+            z-index: 997;
+        }
+           
+        </style>
+        <script>
+            const greetings = [
+                "蛇拿九稳",
+                "蛇分美满",
+                "蛇蛇如意",
+                "蛇么攏贺",
+                "蛇來福到",
+                "蛇全大補",
+                "蛇事顺心",
+                "蛇寿安康",
+                "蛇全大补"
+            ];
+        
+            let currentIndex = 0;
+        
+            function updateGreeting() {
+                const greetingElement = document.getElementById('rotating-greeting');
+                greetingElement.textContent = greetings[currentIndex];
+                currentIndex = (currentIndex + 1) % greetings.length;
+            }
+        
+            window.addEventListener('load', () => {
+                updateGreeting();
+                setInterval(updateGreeting, 2000);
+            });
+        
+            AFRAME.registerComponent("video-controller", {
+                init: function () {
+                    const target = document.getElementById("target");
+                    const btn = document.querySelector("button");
+                    const video = document.getElementById("video");
+    
+                    // detect target found
+                    target.addEventListener("targetFound", event => {
+                        console.log("target found");
+                        this.found = true;
+                        video.play();
+                    });
+                    // detect target lost
+                    target.addEventListener("targetLost", event => {
+                        console.log("target lost");
+                        this.found = false
+                        video.pause();
+                    });
+                    // detect click event
+                    btn.addEventListener("click", event => {
+                        console.log("btn click");
+                        if (this.found)
+                            video.play();
+                    });
+                }
+            })
+    
+        </script>
+</head>
+
+<body>
+    <div class="decoration" style="top: -15px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 1rem; width: auto">
+        <p class="cny-text text-xl" style="margin: 0">晓萦和保任祝福大家</p>
+        <img src="img/lantern.gif" style="width: 80px; height: 80px">
+        <p class="cny-text text-xl" style="margin: 0">乙巳年财神到赚大钱</p>
+    </div>
+    
+    <div class="decoration"  style="top: -40px;">蛇来运转</div>
+    <img src="img/lion-dance-unscreen.gif" class="decoration" style="bottom: -10px; left: 50%; transform: translateX(-50%)">
+    
+    <div class="fixed top-6 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md mt-6 card">
+        <div class="cny-container text-center">
+            <div class="flex justify-between items-center mb-4">
+                <img src="img/fire-cracker-unscreen.gif" style="width: 60px; height: 60px">
+                <div>
+                    <h1 class="cny-text text-6xl mt-2" id="rotating-greeting">新年快乐</h1><br>
+                    <h3 class="mb-4 cny-text text-3xl">Chinese New Year</h3>
+                </div>
+                <img src="img/fire-cracker-unscreen.gif" style="width: 60px; height: 60px">
+            </div>
+            <button class="cny-button block w-full hidden">Play Video</button>
+        </div>
+    </div>
+
+        <a-scene
+        class="camera-wrapper"
+        mindar-image="imageTargetSrc: targets.mind;uiScanning:no"
+        color-space="sRGB" renderer="colorManagement: true" vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false" cursor="rayOrigin: mouse;"
+        raycaster="objects: .clickable">
+        <a-assets>
+            <video id="video" src="img/vid.mp4" preload loop="true" ></video>
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false" rotation="0 0 0"></a-camera>
+        <a-entity id="target" mindar-image-target="targetIndex: 0">
+            <a-plane class="clickable" material="src: #video; opacity: 1;" video-controller height="4" width="3"></a-plane>
+        </a-entity>
+
+    <a-scene>
+
+
+ 
+</body>
+
+</html>
