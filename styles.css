@@ -35,10 +35,10 @@
   background: #ffffff;
   border: 3px solid #e31837;
   border-radius: 1rem;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  max-width: 90vw;
+  max-width: 80vw;
   width: fit-content;
   margin: 0.5rem;
   text-align: center;
