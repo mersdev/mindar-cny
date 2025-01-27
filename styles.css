@@ -25,6 +25,16 @@
   background-color: white;
 }
 
+.bottom-content-text {
+  font-family: "OzCaramel", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  background: linear-gradient(45deg, #e16d00, #e31837);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.1rem;
+}
+
 .lion-wrapper {
   display: flex;
   align-items: center;
