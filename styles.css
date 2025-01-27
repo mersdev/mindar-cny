@@ -3,20 +3,120 @@
   src: url("OzCaramel Regular.ttf") format("truetype");
 }
 
+/* Layout */
+.top-content {
+  position: absolute;
+  top: 2.5rem;
+  width: 100%;
+  z-index: 10;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.lion-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container Styles */
 .cny-container {
   background: #ffffff;
   border: 3px solid #e31837;
   border-radius: 1rem;
-
-  padding-bottom: 0rem;
+  padding: 0.75rem 2rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  max-width: 90vw;
-  width: min(400px, 70vw);
-  margin: 1rem;
+  max-width: 95vw;
+  width: fit-content;
+  margin: 0.5rem;
+  text-align: center;
 }
 
-.cny-text {
+.greeting-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Text Styles */
+.greeting-text h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.greeting-text h3 {
+  font-size: 1.25rem;
+  margin: 0.25rem 0 0 0;
+}
+
+/* Image Styles */
+.cny-decorations {
+  width: 60px;
+  height: 60px;
+}
+
+.cny-lion {
+  width: 60px;
+  height: 60px;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .cny-decorations {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cny-lion {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cny-container {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .greeting-container {
+    gap: 0.75rem;
+  }
+
+  .greeting-text h1 {
+    font-size: 1.75rem;
+  }
+
+  .greeting-text h3 {
+    font-size: 1rem;
+  }
+
+  .cny-decorations {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.greeting-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting-text h1 {
   font-family: "OzCaramel", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, sans-serif;
   background: linear-gradient(45deg, #e31837, #ffd700);
@@ -26,8 +126,26 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 2.5rem;
+  margin: 0;
+  display: block;
+  line-height: 1.2;
 }
 
+.greeting-text h3 {
+  font-family: "OzCaramel", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  background: linear-gradient(45deg, #e31837, #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.5rem;
+  margin: 0.5rem 0 0 0;
+  display: block;
+  line-height: 1.2;
+}
+
+/* Button Styles */
 .cny-button {
   background-color: #e31837;
   color: #fff;
@@ -35,6 +153,8 @@
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
+  width: 100%;
+  display: none;
 }
 
 .cny-button:hover {
@@ -43,50 +163,43 @@
   transform: translateY(-2px);
 }
 
+/* Image Styles */
 .cny-decorations {
+  width: 65px;
+  height: 65px;
+}
+
+.cny-lion {
   width: 60px;
   height: 60px;
 }
 
-.cny-lantern {
-  width: 80px;
-  height: 80px;
+/* Camera Scene */
+.camera-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-.cny-lion {
-  width: 80px;
-  height: 80px;
-}
-
-.rotating-text .rotating-greeting {
-  opacity: 0;
-  animation: fadeInOut 3.5s ease-in-out infinite;
-}
-
-@keyframes fadeInOut {
-  0%,
-  100% {
-    opacity: 0;
-    transform: translateY(10px);
+/* Media Queries */
+@media (min-width: 768px) {
+  .greeting-text h1 {
+    font-size: 3.5rem;
   }
-  20%,
-  80% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@media (max-width: 768px) {
+  .greeting-text h3 {
+    font-size: 2rem;
+  }
   .cny-decorations {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
   }
-  .cny-lantern {
-    width: 60px;
-    height: 60px;
-  }
+
   .cny-lion {
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
   }
 }
