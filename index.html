@@ -12,15 +12,7 @@
             font-family: 'OzCaramel';
             src: url('OzCaramel Regular.ttf') format('truetype');
         }
-        body {
-            margin: 0;
-            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-        }
+
         .cny-container {
             background: #ffffff;
             border: 3px solid #e31837;
@@ -63,11 +55,7 @@
             width: 100px;
             height: 100px;
         }
-        .camera-wrapper {
-            border: 60px solid white;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
+ 
         .cny-decorations {
             width: 60px;
             height: 60px;
@@ -85,7 +73,6 @@
             .cny-decorations {
             width: 50px;
             height: 50px;
-    
         }
         .cny-lantern {
             width: 60px;
@@ -182,7 +169,7 @@
 </head>
 
 <body>
-    <div class="decoration" style="top: -15px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; gap: 1rem; width: auto">
+    <!-- <div class="decoration" style="top: -15px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; gap: 1rem; width: auto">
         <p class="cny-text text-xl hidden md:block" style="margin: 0">晓萦和保任祝福大家</p>
         <img src="img/lantern.gif" class="cny-lantern">
         <p class="cny-text text-xl hidden md:block" style="margin: 0">乙巳年财神到赚大钱</p>
@@ -190,7 +177,7 @@
     
   
     <img src="img/lion-dance-unscreen.gif" class="decoration cny-lion" style="bottom: 0px; left: 50%; transform: translateX(-50%)">
-    
+     -->
     <div class="fixed top-2 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md mt-6 card">
         <div class="cny-container text-center">
             <div class="flex justify-between items-center mb-4">
@@ -205,8 +192,8 @@
         </div>
     </div>
 
-        <a-scene
-        class="camera-wrapper"
+    <a-scene
+   
         mindar-image="imageTargetSrc: targets.mind;uiScanning:no"
         color-space="sRGB" renderer="colorManagement: true" vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false" cursor="rayOrigin: mouse;"
