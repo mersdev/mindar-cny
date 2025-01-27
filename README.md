@@ -1,13 +1,14 @@
-# MindAR Web AR Video Player
+# MindAR Chinese New Year AR Experience
 
-A web-based Augmented Reality (AR) application that plays video content when a specific image target is detected. Built with MindAR and A-Frame.
+A festive web-based Augmented Reality (AR) application that creates an interactive Chinese New Year experience with AR video content and animated decorations. Built with MindAR and A-Frame.
 
 ## Features
 
-- Image tracking using MindAR
-- Video playback triggered by image recognition
-- Mobile-friendly interface
-- Simple play/pause controls
+- Augmented Reality video playback using MindAR image tracking
+- Festive Chinese New Year decorations and animations
+- Animated greeting text (新年快乐)
+- Mobile-friendly interface with responsive design
+- Interactive video controls for better user experience
 
 ## Prerequisites
 
@@ -20,7 +21,7 @@ A web-based Augmented Reality (AR) application that plays video content when a s
 1. Clone this repository:
    ```bash
    git clone [your-repository-url]
-   cd mindar-template
+   cd mindar-cny
    ```
 
 2. Serve the files using a local web server. You can use any of these methods:
@@ -32,29 +33,32 @@ A web-based Augmented Reality (AR) application that plays video content when a s
 
 ## Usage
 
-1. Point your camera at the target image
-2. The video will automatically play when the target is detected
-3. Use the play button if the video appears black on mobile devices
-4. The video will pause when the target is lost from view
-
-## Project Structure
-
-```
-├── index.html          # Main application file
-├── 520.mp4            # Video content
-├── 520.png            # Source image
-└── targets.mind       # Compiled target image data
-```
+1. Allow camera access when prompted
+2. Point your camera at the target image
+3. The AR experience will activate, showing:
+   - Festive Chinese New Year decorations
+   - Animated "新年快乐" greeting
+   - AR video content when target is detected
+4. Use the play button if the video appears black on mobile devices
+5. The video will pause when the target is lost from view
 
 ## Technologies Used
 
 - [MindAR](https://github.com/hiukim/mind-ar-js) - Web AR library
 - [A-Frame](https://aframe.io/) - Web VR framework
 - HTML5 Video
+- TailwindCSS - Utility-first CSS framework
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Credits
+
+Special thanks to the following creators for their contributions:
+
+- [Flaticon](https://www.flaticon.com/) - For providing various icons and visual elements
+- [妙小仙](https://www.xiaohongshu.com/user/profile/5e5101ba000000000100114b) - For creative content contributions
 
 ## License
 
