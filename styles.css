@@ -154,7 +154,7 @@
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   width: 100%;
-  display: none;
+  display: hidden;
 }
 
 .cny-button:hover {
@@ -187,11 +187,11 @@
 /* Media Queries */
 @media (min-width: 768px) {
   .greeting-text h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .greeting-text h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .cny-decorations {
     width: 100px;
