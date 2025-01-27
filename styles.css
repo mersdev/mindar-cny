@@ -56,47 +56,31 @@
 .greeting-text h1 {
   font-size: 2rem;
   line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .greeting-text h3 {
   font-size: 1.25rem;
-  margin: 0.25rem 0 0 0;
-}
-
-/* Image Styles */
-.cny-decorations {
-  width: 60px;
-  height: 60px;
-}
-
-.cny-lion {
-  width: 60px;
-  height: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 360px) {
-  .cny-container {
-    padding: 0.5rem 1.5rem;
-  }
-
-  .greeting-container {
-    gap: 0.75rem;
-  }
-
   .greeting-text h1 {
     font-size: 1.5rem;
   }
 
   .greeting-text h3 {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 
-  .cny-decorations {
-    width: 35px;
-    height: 35px;
+  .cny-container {
+    padding: 0.5rem 1rem;
   }
 }
-
 .greeting-text {
   display: flex;
   flex-direction: column;
@@ -141,7 +125,7 @@
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   width: 100%;
-  display: hidden;
+  visibility: hidden;
 }
 
 .cny-button:hover {
