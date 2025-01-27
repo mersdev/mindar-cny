@@ -92,6 +92,9 @@
   .cny-container {
     padding: 0.5rem 1rem;
   }
+  .bottom-content-text {
+    font-size: 0.875rem;
+  }
 }
 .greeting-text {
   display: flex;
